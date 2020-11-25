@@ -1,0 +1,29 @@
+<h1 style="text-align: center;">All Products</h1>
+
+<br><br>
+
+<div class="container">
+    <table class="table table-bordered" style="text-align: center; vertical-align: center;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>QUANTITY</th>
+                <th>OPERATIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pro of allProducts">
+                <td>{{pro.id}}</td>
+                <td>{{pro.name}}</td>
+                <td>{{pro.price}}</td>
+                <td>{{pro.quantity}}</td>
+                <td>
+                    <button class="btn btn-danger" id="delete" (click)="deleteProduct(pro.id)">DELETE</button>
+                    <a class="btn btn-warning" id="update" routerLink="/update/{{pro.id}}">UPDATE</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
